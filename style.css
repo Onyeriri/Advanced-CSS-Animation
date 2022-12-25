@@ -23,7 +23,7 @@ a:hover {
 	letter-spacing: 10px;
 	border: 7px solid #E1332D;
 } */
-body {
+/* body {
   height: 100vh;
   display: flex;
   align-items: center;
@@ -36,7 +36,7 @@ a {
   text-decoration: none;
   transition: all 1.5s;
   /* transform: scale(0); */
-}
+/* }
 
 a:hover {
   transform: scale(2);
@@ -47,4 +47,90 @@ a:hover {
   letter-spacing: 5px;
   color: black;
   font-weight: bold;
+} */
+
+/* body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  font-size: 20px;
+  font-family: sans-serif;
+  border: 5px solid #333;
+  padding: 40px 80px;
+  letter-spacing: 5px;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+}
+
+a::before {
+  content: "YEAH";
+  width: 100%;
+  height: 100%;
+  background-color: palevioletred;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: all 1.5s;
+}
+
+a:hover::before {
+  transform: translateY(0);
+} */
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+a {
+  text-decoration: none;
+  font-size: 20px;
+  font-family: sans-serif;
+  border: 5px solid #fff;
+  padding: 40px 80px;
+  letter-spacing: 5px;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  transition: all 1.5s;
+  position: relative;
+  transform-origin: right top;
+  /* overflow: hidden; */
+  box-sizing: border-box;
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  transform: translateX(-100%) rotate(45deg);
+  transform-origin: bottom center;
+  transition: all 1.5s;
+}
+
+a:hover::before {
+  transform: translateX(100%) rotate(45deg);
+}
+
+a:hover {
+  background-color: deeppink;
 }
