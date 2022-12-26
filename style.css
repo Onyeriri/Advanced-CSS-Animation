@@ -239,7 +239,7 @@ a:hover::before {
   opacity: 1;
 } */
 
-body {
+/* body {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -283,4 +283,69 @@ a:hover::before {
 
 a:hover {
   color: white;
+} */
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  padding: 40px 80px;
+  font-size: 35px;
+  font-family: sans-serif;
+  font-weight: bold;
+  position: relative;
+  border: 3px solid gray;
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: black;
+  /* overflow: hidden; */
+}
+
+a::before {
+  content: "BUTTON";
+  width: 100%;
+  height: 100%;
+  background-color: green;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* z-index: -1; */
+  transform: rotateX(270deg);
+  transition: all 0.7s;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: top;
+}
+
+a::after {
+  content: "BUTTON";
+  color: white;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* z-index: -1; */
+  transform: rotateX(270deg);
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: top;
+  transition-delay: 0.6s;
+}
+
+a:hover::before {
+  transform: rotateX(0);
+}
+a:hover::after {
+  transform: rotateX(0);
 }
