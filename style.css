@@ -558,7 +558,7 @@ a:hover {
   color: #000;
 } */
 
-body {
+/* body {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -646,4 +646,57 @@ a:hover span::after {
 a:hover {
   color: deeppink;
   transition-delay: 0.8s;
+} */
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+}
+
+a {
+  padding: 30px 60px;
+  position: relative;
+  text-decoration: none;
+  color: deeppink;
+  font-size: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 1.2s;
+}
+
+a::before,
+a::after {
+  content: "";
+  position: absolute;
+}
+
+a::before {
+  top: -15px;
+  left: 0;
+  width: 245px;
+  height: 125px;
+  border-left: 5px solid #fff;
+  border-right: 5px solid aqua;
+}
+
+a::after {
+  bottom: 0;
+  left: -24px;
+  width: 300px;
+  height: 80px;
+  border-top: 5px solid #fff;
+  border-bottom: 5px solid aqua;
+}
+
+a:hover::before {
+  transform: rotateY(180deg);
+}
+
+a:hover::after {
+  transform: rotateX(180deg);
 }
