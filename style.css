@@ -498,7 +498,7 @@ a:hover {
   transition-delay: 0.6s;
 } */
 
-body {
+/* body {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -556,4 +556,94 @@ a:hover::after {
 }
 a:hover {
   color: #000;
+} */
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+}
+
+a {
+  padding: 40px 80px;
+  border: 3px solid gold;
+  color: darkgray;
+  text-decoration: none;
+  font-size: 22px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 80px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+a::before,
+a::after,
+span::before,
+span::after {
+  content: "";
+  width: 25%;
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+  transition-delay: 0.8s;
+  transition: all 0.8s;
+  z-index: -1;
+}
+
+a::before {
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+}
+
+a::after {
+  top: 0;
+  left: 25%;
+  transform: translateY(100%);
+}
+
+a span::before {
+  top: 0;
+  right: 25%;
+  transform: translateY(-100%);
+}
+
+a span::after {
+  top: 0;
+  right: 0;
+  transform: translateY(100%);
+}
+
+a:hover::before,
+a:hover::after,
+a:hover span::after,
+a:hover span::before {
+  transform: translateY(0);
+}
+
+a:hover::before {
+  transition-delay: 0.2s;
+}
+
+a:hover::after {
+  transition-delay: 0.4s;
+}
+
+a:hover span::before {
+  transition-delay: 0.6s;
+}
+
+a:hover span::after {
+  transition-delay: 0.8s;
+}
+
+a:hover {
+  color: deeppink;
+  transition-delay: 0.8s;
 }
