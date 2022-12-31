@@ -713,7 +713,7 @@ a:hover::after {
   transform: rotateX(180deg);
 } */
 
-body {
+/* body {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -761,4 +761,89 @@ a:hover span {
 
 a:hover::before {
   transform: rotate(15deg);
+} */
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: sans-serif;
+  border: none;
+  text-transform: capitalize;
+  padding: 10px 40px;
+  letter-spacing: 2px;
+  line-height: 40px;
+  background-color: transparent;
+  position: relative;
+  color: #fff;
+  transition: all 0.9s;
+  overflow: hidden;
+}
+
+a::before {
+  content: "";
+  width: 100%;
+  height: 3px;
+  top: 0;
+  left: -100%;
+  position: absolute;
+  background-color: red;
+}
+
+a::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  right: -100%;
+  position: absolute;
+  background-color: white;
+}
+
+span::before {
+  content: "";
+  width: 3px;
+  height: 100%;
+  top: 100%;
+  left: 0;
+  position: absolute;
+  background-color: palegreen;
+}
+
+span::after {
+  content: "";
+  width: 3px;
+  height: 100%;
+  top: -100%;
+  right: 0;
+  position: absolute;
+  background-color: gold;
+}
+
+a::before,
+a::after,
+span::after,
+span::before {
+  transition: all 0.9s;
+}
+
+a:hover::before {
+  transform: translateX(100%);
+}
+a:hover::after {
+  transform: translateX(-100%);
+}
+a:hover span::before {
+  transform: translateY(-100%);
+}
+a:hover span::after {
+  transform: translateY(100%);
 }
