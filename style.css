@@ -911,7 +911,7 @@ a:hover {
 } 
 */
 
-body {
+/* body {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -963,4 +963,12 @@ a:hover span::before {
 
 a:hover {
   color: white;
+} */
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
