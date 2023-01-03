@@ -971,4 +971,55 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Lato", sans-serif;
+  background-color: #10ac84;
+}
+
+a {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+  padding: 1px 30px;
+  background-color: transparent;
+  font-size: 28px;
+  color: #fff;
+}
+
+a:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  left: -1%;
+  top: -5px;
+  background: #ee5253;
+  transform: skewX(30deg);
+  z-index: -1;
+  transform: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+a:hover::before {
+  transform: skewX(0deg);
+  left: 50%;
+  top: 0;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  left: 51%;
+  top: 5px;
+  background: #ee5253;
+  transform: skewX(30deg);
+  z-index: -1;
+  transform: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+a:hover::after {
+  transform: skewX(0deg);
+  left: 0%;
+  top: 0;
 }
