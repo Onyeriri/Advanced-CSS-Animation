@@ -1075,7 +1075,7 @@ a:active {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 } */
 
-body {
+/* body {
   height: 100vh;
   margin: 0;
   display: flex;
@@ -1138,4 +1138,27 @@ a:hover::after {
 
 a:hover {
   color: white;
+} */
+
+.container {
+  display: flex;
+  width: 900px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #2697bcb2;
+  text-align: center;
+  position: relative;
+}
+
+.box > span {
+  background: red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
