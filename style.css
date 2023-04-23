@@ -1182,7 +1182,7 @@ a:hover::before {
   transform: rotate(0deg);
 } */
 
-a {
+/* a {
   padding: 30px 60px;
   color: rgb(75, 9, 161);
   text-decoration: none;
@@ -1216,6 +1216,57 @@ a {
 
 a:hover::before {
   transform: translate(0%);
+}
+
+a:hover {
+  color: white;
+} */
+
+a {
+  padding: 20px 40px;
+  text-decoration: none;
+  border: 2px solid black;
+  color: black;
+
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+  transition: all 1s;
+  position: relative;
+}
+
+a::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: black;
+  z-index: -1;
+  transform: rotateX(90deg);
+  transition: all 1.3s;
+}
+
+a::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: black;
+  z-index: -1;
+  transform: rotateY(90deg);
+  transition: all 1.3s;
+}
+
+a:hover::after {
+  transform: rotateX(0deg);
+}
+
+a:hover::before {
+  transform: rotateY(0deg);
 }
 
 a:hover {
