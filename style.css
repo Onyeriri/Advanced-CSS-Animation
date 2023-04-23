@@ -1148,7 +1148,7 @@ body {
   height: 100dvh;
 }
 
-a {
+/* a {
   width: 100px;
   height: 50px;
   display: block;
@@ -1161,7 +1161,7 @@ a {
   color: black;
   padding-top: 25px;
   position: relative;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 a::before {
@@ -1180,4 +1180,44 @@ a::before {
 
 a:hover::before {
   transform: rotate(0deg);
+} */
+
+a {
+  padding: 30px 60px;
+  color: rgb(75, 9, 161);
+  text-decoration: none;
+  font: 1.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: 1.1s ease-in-out;
+  perspective: 500px;
+}
+
+a::before {
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: rgb(75, 9, 161);
+  z-index: -1;
+  transform: translateY(-100%);
+  transition: all 1.3s ease-in-out;
+}
+
+a::before,
+a {
+  border-radius: 5px;
+  border: 2px solid rgb(75, 9, 161);
+}
+
+a:hover::before {
+  transform: translate(0%);
+}
+
+a:hover {
+  color: white;
 }
