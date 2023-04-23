@@ -1100,65 +1100,84 @@ a {
   overflow: hidden;
 }
 
-a:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  border-top: 40px solid #250e74;
-  border-bottom: 40px solid #250e74;
-  border-right: 40px solid transparent;
-  z-index: -1;
-  transition: translateX(-100%);
-}
-
-a:hover::before {
-  transform: translateX(0%);
-}
-
-a:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  border-top: 40px solid #250e74;
-  border-bottom: 40px solid #250e74;
-  border-left: 40px solid transparent;
-  z-index: -1;
-  transition: translateX(100%);
-}
-
-a:hover::after {
-  transform: translateX(0%);
-}
-
-a:hover {
-  color: white;
-} */
-
 .container {
-  display: flex;
-  width: 900px;
-  height: auto;
-  margin: 0 auto;
-}
-
-.box {
   width: 200px;
-  height: 200px;
-  border: 1px solid #2697bcb2;
-  text-align: center;
+  height: 100px;
+  border: 1px solid red;
   position: relative;
 }
 
-.box > span {
-  background: red;
+.container::after {
+  content: "Hello word";
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  animation: changeContent 10s ease-in-out infinite;
+}
+
+@keyframes changeContent {
+  0% {
+    content: "";
+  }
+  25% {
+    content: "Scissors";
+  }
+  50% {
+    content: "Rock";
+  }
+  75% {
+    content: "Paper";
+  }
+  100% {
+    content: "Shoot";
+  }
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100dvh;
+}
+
+a {
+  width: 100px;
+  height: 50px;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid black;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  text-align: center;
+  color: black;
+  padding-top: 25px;
+  position: relative;
+  /* overflow: hidden; */
+}
+
+a::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: hwb(167 0% 0% / 0.986);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 1.5s ease-in-out;
+  transform-origin: bottom right;
+  transform: rotate(90deg);
+  z-index: -1;
+}
+
+a:hover::before {
+  transform: rotate(0deg);
 }
