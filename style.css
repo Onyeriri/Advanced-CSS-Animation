@@ -1227,7 +1227,6 @@ a {
   text-decoration: none;
   border: 2px solid black;
   color: black;
-
   text-transform: uppercase;
   font-size: 1.2rem;
   font-family: sans-serif;
@@ -1242,31 +1241,17 @@ a::before {
   top: 0;
   left: 0;
   position: absolute;
-  background: black;
+  background: deeppink;
   z-index: -1;
-  transform: rotateX(90deg);
-  transition: all 1.3s;
-}
-
-a::after {
-  content: "";
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  position: absolute;
-  background: black;
-  z-index: -1;
-  transform: rotateY(90deg);
-  transition: all 1.3s;
-}
-
-a:hover::after {
-  transform: rotateX(0deg);
+  border-radius: 0 0 50px 50px;
+  transition: all 1s;
+  transform: translateY(-100%);
+  text-transform: uppercase;
 }
 
 a:hover::before {
-  transform: rotateY(0deg);
+  transform: translateY(0);
+  border-radius: 0;
 }
 
 a:hover {
