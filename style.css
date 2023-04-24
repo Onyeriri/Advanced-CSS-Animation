@@ -1224,44 +1224,66 @@ a:hover {
 
 body {
   background: white;
+  perspective: 500px;
 }
 
 a {
   padding: 30px 80px;
   text-decoration: none;
   border: 3px solid black;
-  color: black;
+  color: white;
   text-transform: uppercase;
   font-size: 1.2rem;
   font-family: sans-serif;
   transition: all 1s ease-in-out;
   font-weight: 300;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
+  background: black;
 }
 
 a::before {
-  content: "";
+  content: "Button";
   width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   background: deeppink;
-  z-index: -1;
-  border-radius: 0 0 50px 50px;
-  transition: all 1s;
-  transform: translateY(-100%);
+  transition: all 0.5s ease-in-out;
+  transform: rotateX(270deg);
   text-transform: uppercase;
+  transform-origin: top;
+}
+
+a::after {
+  content: "Button";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background: green;
+  transition: all 0.5s ease-in-out 0.3s;
+  transform: rotateX(270deg);
+  text-transform: uppercase;
+  transform-origin: top;
 }
 
 a:hover::before {
-  transform: translateY(0);
-  border-radius: 0;
+  transform: rotateX(0);
+}
+
+a:hover::after {
+  transform: rotateX(0);
 }
 
 a:hover {
   color: white;
 }
-
-
-
