@@ -1222,21 +1222,26 @@ a:hover {
   color: white;
 } */
 
+body {
+  background: white;
+}
+
 a {
-  padding: 20px 40px;
+  padding: 30px 80px;
   text-decoration: none;
-  border: 2px solid black;
+  border: 3px solid black;
   color: black;
   text-transform: uppercase;
   font-size: 1.2rem;
   font-family: sans-serif;
-  transition: all 1s;
+  transition: all 1s ease-in-out;
+  font-weight: 300;
   position: relative;
+  overflow: hidden;
 }
 
 a::before {
   content: "";
-  height: 100%;
   width: 100%;
   top: 0;
   left: 0;
@@ -1257,3 +1262,6 @@ a:hover::before {
 a:hover {
   color: white;
 }
+
+
+
