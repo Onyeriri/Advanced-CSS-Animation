@@ -1227,113 +1227,73 @@ body {
 }
 
 a {
-  padding: 20px 50px;
+  padding: 20px 80px;
   text-decoration: none;
-  color: gold;
+  color: white;
   text-transform: uppercase;
   font-size: 1.2rem;
   font-family: sans-serif;
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
   font-weight: 300;
+  color: goldenrod;
   position: relative;
   display: flex;
+  border: 2px solid goldenrod;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
-#left {
-  width: 10px;
-  height: 10px;
-  border-radius: 100%;
-  display: inline-block;
-  background: gold;
-  position: absolute;
-  transition: all 1s ease-in-out;
-  opacity: 0;
-  left: -50%;
-}
-
-#left::before {
+a::before,
+a::after,
+span::before,
+span::after {
   content: "";
-  width: 100%;
+  width: 25%;
   height: 100%;
-  background: gold;
+  top: 0;
+  background: goldenrod;
   position: absolute;
-  border-radius: 100%;
-  margin-left: 50px;
-}
-
-#left::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: gold;
-  position: absolute;
-  border-radius: 100%;
-  margin-left: -50px;
-}
-
-a:hover #left {
-  left: 50%;
-  opacity: 1;
-}
-
-#right {
-  width: 10px;
-  height: 10px;
-  border-radius: 100%;
-  display: inline-block;
-  background: gold;
-  position: absolute;
-  transition: all 1s ease-in-out;
-  opacity: 0;
-  right: -50%;
-}
-
-#right::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: gold;
-  position: absolute;
-  border-radius: 100%;
-  margin-left: 50px;
-}
-
-#right::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: gold;
-  position: absolute;
-  border-radius: 100%;
-  margin-left: -50px;
-  display: none;
-}
-
-a:hover #right {
-  right: 70%;
-  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
 }
 
 a::before {
-  content: "Hover me";
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  position: absolute;
-  background-color: rgba(255, 215, 0, 0.9);
-  transition: all 0.5s ease-in-out 0.8s;
-  transform: scale(0);
-  color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
+  left: -25%;
+}
+
+a::after {
+  right: -25%;
+  background-color: goldenrod;
+}
+
+span::after {
+  left: 25%;
+  top: -100%;
+  background-color: goldenrod;
+}
+
+span::before {
+  right: 25%;
+  top: 100%;
+  background-color: goldenrod;
 }
 
 a:hover::before {
-  transform: scale(1);
-  border-radius: 5px;
+  top: 0;
+  left: 0;
+}
+a:hover::after {
+  top: 0;
+  right: 0;
+}
+a:hover span::before {
+  top: 0;
+}
+a:hover span::after {
+  top: 0;
+}
+
+a:hover {
+  color: white;
 }
