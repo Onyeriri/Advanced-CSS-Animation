@@ -1241,7 +1241,7 @@ a {
   border: 2px solid goldenrod;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 a::before,
@@ -1254,16 +1254,18 @@ span::after {
   top: 0;
   background: goldenrod;
   position: absolute;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
   z-index: -1;
 }
 
 a::before {
-  left: -25%;
+  top: 100%;
+  left: 0;
 }
 
 a::after {
-  right: -25%;
+  top: -100%;
+  right: 0;
   background-color: goldenrod;
 }
 
