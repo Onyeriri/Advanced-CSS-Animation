@@ -1238,64 +1238,71 @@ a {
   color: goldenrod;
   position: relative;
   display: flex;
-  border: 2px solid goldenrod;
+  /* border: 2px solid goldenrod; */
   justify-content: center;
   align-items: center;
+  /* background-color: goldenrod; */
   /* overflow: hidden; */
 }
 
-a::before,
 a::after,
-span::before,
-span::after {
-  content: "";
-  width: 25%;
-  height: 100%;
-  top: 0;
-  background: goldenrod;
-  position: absolute;
-  transition: all 0.5s ease-in-out;
-  z-index: -1;
-}
-
 a::before {
-  top: 100%;
-  left: 0;
+  content: "";
+  position: absolute;
+  background-color: red;
+  transition: all 1s ease-in-out;
 }
 
 a::after {
-  top: -100%;
-  right: 0;
-  background-color: goldenrod;
-}
-
-span::after {
-  left: 25%;
-  top: -100%;
-  background-color: goldenrod;
-}
-
-span::before {
-  right: 25%;
-  top: 100%;
-  background-color: goldenrod;
-}
-
-a:hover::before {
+  width: 100%;
+  height: 2px;
   top: 0;
   left: 0;
 }
-a:hover::after {
-  top: 0;
-  right: 0;
-}
-a:hover span::before {
-  top: 0;
-}
-a:hover span::after {
-  top: 0;
+
+a::before {
+  width: 50%;
+  height: 2px;
+  top: 30px;
+  left: -50px;
+  transform: rotate(90deg);
 }
 
-a:hover {
-  color: white;
+span::after,
+span::before {
+  content: "";
+  position: absolute;
+  background-color: whitesmoke;
+  transition: all 1s ease-in-out;
+}
+
+span::after {
+  width: 100%;
+  height: 2px;
+  right: 0;
+  bottom: 0;
+}
+
+span::before {
+  width: 50%;
+  height: 2px;
+  top: 30px;
+  right: -50px;
+  transform: rotate(90deg);
+}
+
+a:hover::before {
+  left: 69%;
+}
+
+a:hover::after {
+  top: 100%;
+}
+
+a:hover span::before {
+  right: 69%;
+}
+
+a:hover span::after {
+  bottom: 100%;
 }
