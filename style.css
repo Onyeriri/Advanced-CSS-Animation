@@ -1239,40 +1239,60 @@ a {
   display: flex;
   letter-spacing: 0.5rem;
   font-weight: 500;
-  /* border: 2px solid goldenrod; */
   justify-content: center;
   align-items: center;
-  /* background-color: goldenrod; */
-  /* overflow: hidden; */
+  border: 1px solid white;
+  overflow: hidden;
 }
 
-a::before,
-a::after {
-  content: "";
-  width: 0;
-  height: 0;
-  position: absolute;
+.wave,
+.wave::before,
+a::before {
   transition: all 1s ease-in-out;
-  opacity: 0;
+  position: absolute;
+}
+
+.wave {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.wave::before,
+a::before {
+  content: "";
+  width: 100%;
+  left: 0;
+  z-index: -1;
+}
+
+.wave::before {
+  height: 22px;
+  top: 62px;
+  background: url("/wave.png");
+  animation: wavy 0.5s linear infinite;
 }
 
 a::before {
-  top: -10px;
-  left: -10px;
-  border-top: 3px solid white;
-  border-left: 3px solid white;
-}
-
-a::after {
-  bottom: -10px;
-  right: -10px;
-  border-bottom: 3px solid white;
-  border-right: 3px solid white;
-}
-
-a:hover::before,
-a:hover::after {
-  width: 100%;
   height: 100%;
-  opacity: 1;
+  top: calc(100% + 20px);
+  background: #00aeff;
+}
+
+a:hover::before {
+  top: 0px;
+}
+
+a:hover .wave::before {
+  top: -22px;
+}
+
+@keyframes wavy {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 120px;
+  }
 }
