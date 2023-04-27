@@ -1227,7 +1227,7 @@ body {
 }
 
 a {
-  padding: 40px 80px;
+  padding: 20px 80px;
   text-decoration: none;
   color: white;
   text-transform: uppercase;
@@ -1238,37 +1238,41 @@ a {
   position: relative;
   display: flex;
   letter-spacing: 0.5rem;
-  font-weight: 900;
-  border: 2px solid goldenrod;
+  font-weight: 500;
+  /* border: 2px solid goldenrod; */
   justify-content: center;
   align-items: center;
   /* background-color: goldenrod; */
   /* overflow: hidden; */
 }
 
-a::before {
+a::before,
+a::after {
   content: "";
-  background-color: green;
+  width: 0;
+  height: 0;
+  position: absolute;
+  transition: all 1s ease-in-out;
+  opacity: 0;
+}
+
+a::before {
+  top: -10px;
+  left: -10px;
+  border-top: 3px solid white;
+  border-left: 3px solid white;
+}
+
+a::after {
+  bottom: -10px;
+  right: -10px;
+  border-bottom: 3px solid white;
+  border-right: 3px solid white;
+}
+
+a:hover::before,
+a:hover::after {
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 1s ease-in-out;
-}
-
-span {
-  /* transform: rotate(0) scale(0); */
-  transition: all 1s ease-in-out;
-}
-
-a:hover span {
-  transform: rotate(360deg) scale(4);
-  display: inline-block;
-  margin-right: 5px;
-}
-
-a:hover::before {
-  transform: rotate(10deg);
+  opacity: 1;
 }
