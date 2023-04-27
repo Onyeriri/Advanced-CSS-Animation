@@ -1223,76 +1223,53 @@ a:hover {
 } */
 
 body {
-  background: black;
+  background: white;
 }
 
 a {
-  padding: 20px 80px;
   text-decoration: none;
-  color: white;
-  text-transform: uppercase;
-  font-size: 1.2rem;
-  font-family: sans-serif;
-  transition: all 0.5s ease-in-out;
-  color: white;
+  width: 160px;
+  height: 40px;
   position: relative;
+  background: transparent;
+  overflow: hidden;
   display: flex;
-  letter-spacing: 0.5rem;
-  font-weight: 500;
   justify-content: center;
   align-items: center;
-  border: 1px solid white;
   overflow: hidden;
 }
 
-.wave,
-.wave::before,
-a::before {
-  transition: all 1s ease-in-out;
-  position: absolute;
-}
-
-.wave {
-  width: 100%;
-  height: 100%;
+a span {
   top: 0;
   left: 0;
-}
-
-.wave::before,
-a::before {
-  content: "";
   width: 100%;
-  left: 0;
+  height: 100%;
+  box-sizing: border-box;
+  background: transparent;
+  position: absolute;
+  border: 2px solid black;
   z-index: -1;
 }
 
-.wave::before {
-  height: 22px;
-  top: 62px;
-  background: url("/wave.png");
-  animation: wavy 0.5s linear infinite;
+span::after {
+  content: "";
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: all 0.5s ease-in-out;
+  background: white;
+  transform: translate(-50%, -50%) rotate(20deg);
 }
 
-a::before {
-  height: 100%;
-  top: calc(100% + 20px);
-  background: #00aeff;
+a:hover span::after {
+  height: 500px;
+  width: 500px;
+  background: black;
+  transform: translate(-50%, -50%) rotate(-60deg);
 }
 
-a:hover::before {
-  top: 0px;
-}
-
-a:hover .wave::before {
-  top: -22px;
-}
-
-@keyframes wavy {
-  0% {
-    background-position-x: 0;
-  }
-  100% {
-    background-position-x: 120px;
-  }
+a:hover {
+  color: white;
 }
