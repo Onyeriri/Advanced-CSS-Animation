@@ -29,6 +29,7 @@ body {
   width: 400px;
   height: 400px;
   position: relative;
+  overflow: hidden;
   color: var(--main-color);
   background: var(--main-color);
 }
@@ -42,8 +43,7 @@ body {
 }
 
 .container img,
-.container::after,
-.container .title,
+/* .container::after, */
 .container .caption {
   transition: all 1s;
 }
@@ -62,7 +62,8 @@ body {
 
 .container::after {
   background: var(--tertiary-color);
-  transform: scale(0);
+  transform: translateY(-393px);
+  transition-delay: 0s;
 }
 
 .container .title {
@@ -75,8 +76,7 @@ body {
   background: var(--background-color);
   text-transform: uppercase;
   letter-spacing: 2px;
-  transition: all 1s;
-  opacity: 0;
+  transform: translateY(-393px);
   z-index: 1;
 }
 
@@ -89,7 +89,6 @@ body {
   position: absolute;
   text-align: center;
   padding: 10px 0;
-  opacity: 0;
   transition-delay: 0s;
   z-index: 1;
 }
@@ -102,6 +101,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   margin: 0 0 50px 0;
+  transform: translateY(-360px);
 }
 
 .container .caption .btn {
@@ -112,21 +112,36 @@ body {
   padding: 10px 30px;
   background: var(--background-color);
   cursor: pointer;
+  display: inline-block;
   text-decoration: none;
   letter-spacing: 2px;
+  transform: translateY(-380px);
 }
 
 .container:hover::after {
-  transform: scale(1) rotate(180deg);
+  transform: translateY(0);
+  transition: all 0.5s;
   transition-delay: 1s;
 }
 
 .container:hover img {
-  transform: scale(0);
+  transform: scale(0) rotate(360deg);
 }
 
 .container:hover .title,
-.container:hover .caption {
-  transition-delay: 2s;
-  opacity: 1;
+.container:hover .text,
+.container:hover .btn {
+  transform: translateY(0);
+}
+
+.container:hover .title {
+  transition-delay: 2.7s;
+}
+
+.container:hover .text {
+  transition-delay: 2.3s;
+}
+
+.container:hover .btn {
+  transition-delay: 1.9s;
 }
