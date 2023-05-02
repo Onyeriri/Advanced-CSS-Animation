@@ -25,7 +25,7 @@ body {
 
 .nav-container {
   width: 80%;
-  height: auto;
+  height: 40px;
 }
 
 .nav-container ul {
@@ -33,19 +33,21 @@ body {
   flex-wrap: wrap;
   justify-content: space-around;
   justify-items: center;
+  /* background: var(--background-color); */
+  height: 41px;
 }
 
 .nav-container ul li {
   list-style: none;
+  /* background: var(--background-color-2); */
+  overflow: hidden;
 }
 
 .nav-container ul li a {
   color: var(--background-color-black);
-  /* overflow: hidden; */
   text-decoration: none;
   display: inline-block;
   width: 95px;
-
   height: 30px;
   text-align: center;
   letter-spacing: 1px;
@@ -58,80 +60,37 @@ body {
   transition-delay: 0.5s;
   position: relative;
   z-index: 1;
+  /* background: var(--secondary-color); */
 }
 
 .nav-container ul li a::before,
-.nav-container ul li a span::before,
-.nav-container ul li a span::after,
 .nav-container ul li a::after {
   content: "";
-  width: 100%;
-  height: 25%;
+  bottom: -5px;
+  width: 50%;
+  height: 3px;
   position: absolute;
-  margin: 0 0 20px 0;
-  transition: all 0.5s ease-in-out;
+  transition: all 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transform-origin: left;
   z-index: -1;
 }
 
 .nav-container ul li a::before {
-  top: 0;
   left: 0;
-  background: var(--background-color-black);
-  transform: translateY(-25px);
-  transition-delay: 0.3s;
+  background: var(--background-color-1);
+  transform: translateX(-100%);
 }
 
 .nav-container ul li a::after {
-  top: 25%;
-  left: 0;
-  background: var(--background-color-black);
-  transform: translateY(-50px);
-  transition-delay: 0.5s;
-}
-
-.nav-container ul li a span::before {
-  top: 50%;
-  left: 0;
-  background: var(--background-color-black);
-  transform: translateY(-75px);
-  transition-delay: 0.7s;
-}
-
-.nav-container ul li a span::after {
-  top: 75%;
-  left: 0;
-  background: var(--background-color-black);
-  transform: translateY(-100px);
-  transition-delay: 0.9s;
-}
-
-.nav-container ul li a:hover::before,
-.nav-container ul li a:hover::after,
-.nav-container ul li a:hover span::before,
-.nav-container ul li a:hover span::after {
-  opacity: 1;
-  transform: translateY(0);
+  right: 0;
+  background: var(--tertiary-color);
+  transform: translateX(100%);
 }
 
 .nav-container ul li a:hover::before {
-  transition-delay: 0.5s;
+  transform: translateX(100%) scale(1);
 }
+
 .nav-container ul li a:hover::after {
-  transition-delay: 0.7s;
-}
-.nav-container ul li a:hover span::before {
-  transition-delay: 0.9s;
-}
-.nav-container ul li a:hover span::after {
-  transition-delay: 1.1s;
-}
-
-.nav-container ul li a:hover {
-  background: var(--background-color);
-  color: var(--main-color);
-  z-index: 1;
-}
-
-span:nth-child(4) {
-  background: var(--background-color-1);
+  transform: translateX(-100%);
 }
