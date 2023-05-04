@@ -29,6 +29,7 @@ body {
 ul {
   color: var(--main-color);
   display: flex;
+  cursor: pointer;
   justify-content: center;
   align-items: center;
   list-style: none;
