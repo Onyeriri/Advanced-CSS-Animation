@@ -31,150 +31,68 @@ body {
 .container {
   width: 20%;
   height: 20%;
-  /* background: var(--background-color-1); */
   position: relative;
+  line-height: 100px;
+  /* text-align: center; */
+  background-color: var(--background-color-1);
 }
 
-.container::before,
-.container::after {
-  content: "";
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transition: all 1s;
-  box-sizing: border-box;
-}
-
-.container::before {
-  border-bottom: 5px solid var(--icon-color-yellow-green);
-  border-top: 5px solid var(--icon-color-yellow-green);
-  transform: scaleX(0);
-  animation: animate2 2s infinite;
-  animation-direction: alternate;
-  transition-delay: 2s;
-}
-
-.container::after {
-  border-left: 5px solid var(--background-color-red-lilac);
-  border-right: 5px solid var(--background-color-red-lilac);
-  transform: scaleY(0);
-  animation: animate 2s infinite;
-  animation-direction: alternate;
-  transition-delay: 2s;
-}
-
-.container .rotate {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  /* background: var(--background-color-black); */
-  transform: rotate(45deg);
-}
-
-.container .rotate::after,
-.container .rotate::before {
-  content: "";
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transition: all 1s;
-  box-sizing: border-box;
-  transition-delay: 2s;
-}
-
-.container .rotate::after {
-  border-top: 5px solid var(--background-color);
-  border-bottom: 5px solid var(--background-color);
-  /* transform: scaleX(0); */
-  animation: animate2 2s infinite;
-  animation-direction: alternate;
-}
-
-.container .rotate::before {
-  border-left: 5px solid var(--background-color-1);
-  border-right: 5px solid var(--background-color-1);
-  box-sizing: border-box;
-  /* transform: scaleY(0); */
-  animation: animate 2s infinite;
-  animation-direction: alternate;
-}
-
-.container:hover::before {
-  transform: scaleX(1);
-}
-
-.container:hover::after {
-  transform: scaleY(1);
-}
-
-.container:hover .rotate::after {
-  transform: scaleX(1);
-}
-.container:hover .rotate::before {
-  transform: scaleY(1);
-}
-
-.container .lists {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  /* background: var(--background-color-2); */
-  color: var(--color-grey);
-  list-style-type: none;
-}
-
-.container .lists .lists-item {
-  display: block;
-  font-size: 1.5rem;
-  text-transform: uppercase;
+.container span {
+  width: 50px;
+  height: 20px;
   text-align: center;
+  display: inline-block;
+  position: absolute;
+  background: var(--main-color);
 }
 
-.container .lists .lists-item:nth-child(2) {
-  color: var(--icon-color-yellow-green);
-  font-size: 1.7rem;
-  font-weight: bolder;
+.container span::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-align: center;
+  position: absolute;
+  background: var(--background-color);
+  animation: writing 2s linear forwards;
+}
+
+i {
+  display: inline-block;
+  margin-left: 50px;
+  color: var(--main-color);
+  font-size: 34px;
+  animation: animate 1s linear 3;
 }
 
 @keyframes animate {
-  0% {
-    transform: scaleY(0);
+  from {
+    transform: rotate(10deg);
   }
-
-  50% {
-    transform: scaleY(0.5);
-  }
-
-  75% {
-    transform: scaleY(1);
-  }
-
-  100% {
-    transform: scaleY(0);
+  to {
+    transform: rotate(-10deg);
   }
 }
 
-@keyframes animate2 {
+@keyframes writing {
   0% {
-    transform: scaleX(0);
+    content: "";
+  }
+
+  25% {
+    content: "p";
   }
 
   50% {
-    transform: scaleX(0.5);
+    content: "pd";
   }
 
   75% {
-    transform: scaleX(1);
+    content: "pdf";
   }
 
   100% {
-    transform: scaleX(0);
+    content: "pdf...";
   }
 }
