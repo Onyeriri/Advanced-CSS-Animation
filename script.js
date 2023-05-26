@@ -1,11 +1,18 @@
-"use strict";
+let salaries = {
+    John: 100,
+    Ann: 160,
+    Pete: 130
+}
 
-const user = {};
+const result = TotalSalaries(salaries);
+console.log(result);
 
-user['name'] = 'John';
-user['username'] = 'Smith';
-user['name'] = 'Pete';
+function TotalSalaries(salaries) {
+    let sum = 0;
 
-delete user['name'];
+    for (let keys in salaries) {
+        sum += salaries[keys];
+    }
 
-console.log(user);
+    return sum;
+}
