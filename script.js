@@ -1,18 +1,14 @@
-let salaries = {
-    John: 100,
-    Ann: 160,
-    Pete: 130
-}
+let menu = {
+    width: 200,
+    height: 300,
+    title: 'My menu'
+};
 
-const result = TotalSalaries(salaries);
-console.log(result);
+multiplyNumeric(menu);
+console.log(menu);
 
-function TotalSalaries(salaries) {
-    let sum = 0;
-
-    for (let keys in salaries) {
-        sum += salaries[keys];
+function multiplyNumeric(obj) {
+    for (let key in obj) {
+        if (typeof obj[key] === 'number') obj[key] *= 2;
     }
-
-    return sum;
 }
