@@ -1,14 +1,9 @@
-let menu = {
-    width: 200,
-    height: 300,
-    title: 'My menu'
+let user = {
+    name: 'John'
 };
 
-multiplyNumeric(menu);
-console.log(menu);
+let admin = user;
 
-function multiplyNumeric(obj) {
-    for (let key in obj) {
-        if (typeof obj[key] === 'number') obj[key] *= 2;
-    }
-}
+user['name'] = null;
+
+console.log(admin);
