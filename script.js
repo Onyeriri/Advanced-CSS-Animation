@@ -121,10 +121,18 @@
 // let result = getMaxSubSum([-1, -22, 3, -9, 2]);
 // console.log(result);
 
-function camelize(str) {
-    console.log(str);
-    return str.split('-').map((word, index) => index === 0 ? word : word[0].toUpperCase() + word.slice(1)).join('')
+// function camelize(str) {
+//     console.log(str);
+//     return str.split('-').map((word, index) => index === 0 ? word : word[0].toUpperCase() + word.slice(1)).join('')
+// }
+
+// let result = camelize("-webkit-transition");
+// console.log(result);
+let arr = [5, 3, 8, 1, 17, 2, 21, 40, 50, 64];
+
+function filterRange(arr, a, b) {
+    return arr.filter(arr => (arr >= a && arr <= b)).join(',')
 }
 
-let result = camelize("-webkit-transition");
-console.log(result);
+let result = filterRange(arr, 1, 25);
+console.log(result, '\n', arr);
