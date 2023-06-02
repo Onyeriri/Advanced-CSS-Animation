@@ -136,16 +136,52 @@
 
 // let result = filterRange(arr, 1, 25);
 // console.log(result, '\n', arr);
-let arr = ["HTML", "JavaScript", "CSS"];
+// let arr = ["HTML", "JavaScript", "CSS"];
 
-// let result = arr.sort((a,b) => b - a);
+// // let result = arr.sort((a,b) => b - a);
+// // console.log(result, arr);
+
+// function copySorted(arr) {
+//     let newArr = arr.slice(0);
+
+//     return newArr.sort();
+// }
+
+// let result = copySorted(arr);
 // console.log(result, arr);
 
-function copySorted(arr) {
-    let newArr = arr.slice(0);
+function Calculator() {
 
-    return newArr.sort();
+    this.calculate = function(str){
+        let arr = str.split(' ');
+        if (arr[1] === '+') {
+            return (Number(arr[0]) + Number(arr[2]))
+        } else {
+            return (Number(arr[0]) - Number(arr[2]))
+            
+        }
+    }
+
+    this.addMethod = function (name, func) {
+        switch (name) {
+        case '*':
+            func()
+            break;
+        
+        default:
+            break;
+        }
+    }
 }
+ 
+const calc = new Calculator;
+let result = calc.calculate("10 - 7");
+console.log(result);
 
-let result = copySorted(arr);
-console.log(result, arr);
+// let powerCalc = new Calculator;
+// powerCalc.addMethod("*", (a, b) => a * b);
+// powerCalc.addMethod("/", (a, b) => a / b);
+// powerCalc.addMethod("**", (a, b) => a*b*b);
+
+// let result = powerCalc.calculate("2 * 3");
+// console.log(result);
