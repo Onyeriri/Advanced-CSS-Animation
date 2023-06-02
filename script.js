@@ -128,11 +128,24 @@
 
 // let result = camelize("-webkit-transition");
 // console.log(result);
-let arr = [5, 3, 8, 1, 17, 2, 21, 40, 50, 64];
+// let arr = [5, 3, 8, 1, 17, 2, 21, 40, 50, 64];
 
-function filterRange(arr, a, b) {
-    return arr.filter(arr => (arr >= a && arr <= b)).join(',')
+// function filterRange(arr, a, b) {
+//     return arr.filter(arr => (arr >= a && arr <= b)).join(',')
+// }
+
+// let result = filterRange(arr, 1, 25);
+// console.log(result, '\n', arr);
+let arr = ["HTML", "JavaScript", "CSS"];
+
+// let result = arr.sort((a,b) => b - a);
+// console.log(result, arr);
+
+function copySorted(arr) {
+    let newArr = arr.slice(0);
+
+    return newArr.sort();
 }
 
-let result = filterRange(arr, 1, 25);
-console.log(result, '\n', arr);
+let result = copySorted(arr);
+console.log(result, arr);
