@@ -150,33 +150,33 @@
 // let result = copySorted(arr);
 // console.log(result, arr);
 
-function Calculator() {
+// function Calculator() {
 
-    this.calculate = function(str){
-        let arr = str.split(' ');
-        if (arr[1] === '+') {
-            return (Number(arr[0]) + Number(arr[2]))
-        } else {
-            return (Number(arr[0]) - Number(arr[2]))
+//     this.calculate = function(str){
+//         let arr = str.split(' ');
+//         if (arr[1] === '+') {
+//             return (Number(arr[0]) + Number(arr[2]))
+//         } else {
+//             return (Number(arr[0]) - Number(arr[2]))
             
-        }
-    }
+//         }
+//     }
 
-    this.addMethod = function (name, func) {
-        switch (name) {
-        case '*':
-            func()
-            break;
+//     this.addMethod = function (name, func) {
+//         switch (name) {
+//         case '*':
+//             func()
+//             break;
         
-        default:
-            break;
-        }
-    }
-}
+//         default:
+//             break;
+//         }
+//     }
+// }
  
-const calc = new Calculator;
-let result = calc.calculate("10 - 7");
-console.log(result);
+// const calc = new Calculator;
+// let result = calc.calculate("10 - 7");
+// console.log(result);
 
 // let powerCalc = new Calculator;
 // powerCalc.addMethod("*", (a, b) => a * b);
@@ -185,3 +185,47 @@ console.log(result);
 
 // let result = powerCalc.calculate("2 * 3");
 // console.log(result);
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
+
+// let names = [];
+
+// objectConversion(john)
+// objectConversion(pete)
+// objectConversion(mary)
+// console.log(names);
+
+// function objectConversion(obj) {
+
+//     for (let key in obj) {
+//         if(key === 'name') names.push(obj[key])
+//     }
+
+//     return names;
+
+// }
+
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
+
+// let users = [ john, pete, mary ];
+
+// let names = users.map(item => item.name);
+
+// console.log(names);
+let john = { name: "John", surname: "Smith", id: 1 };
+let pete = { name: "Pete", surname: "Hunt", id: 2 };
+let mary = { name: "Mary", surname: "Key", id: 3 };
+
+let users = [ john, pete, mary ];
+
+let usersMapped = users.map(user => {
+    return {
+        fullName: user.surname + ' ' + user.name,
+        id: user.id
+    }
+});
+
+console.log(usersMapped);
