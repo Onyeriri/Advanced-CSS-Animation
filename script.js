@@ -77,30 +77,46 @@
 // arr.splice(0, 0, 'Rap', 'Reggae');
 // console.log(arr);
 
-function promptUsers() {
-    let userInput = 1;
-    let numbers = [];   
+// function promptUsers() {
+//     let userInput = 1;
+//     let numbers = [];
 
-    while (userInput || userInput > 0
-    ) {
-        userInput = prompt('Please enter a number: ');
+//     while (userInput || userInput > 0
+//     ) {
+//         userInput = prompt('Please enter a number: ');
     
     
-        if (isNaN(userInput) === true) break;
+//         if (isNaN(userInput) === true) break;
         
-        numbers.splice((numbers.length - 1), 0, +userInput);
+//         numbers.splice((numbers.length - 1), 0, +userInput);
+//     }
+
+//     sumInput(numbers);
+// }
+
+// promptUsers();
+
+// function sumInput(numbers) {
+//     let total = 0
+//     for (let number of numbers) {
+//         total += number;
+//     }
+
+//     alert(total);
+// }
+
+function getMaxSubSum(arr) {
+    let maxSum = 0;
+    let partialSum = 0;
+
+    for (let item of arr) {
+        partialSum += item;
+        maxSum = Math.max(maxSum, partialSum);
+        if (partialSum < 0) partialSum = 0;
     }
 
-    sumInput(numbers);
+    return maxSum;
 }
 
-promptUsers();
-
-function sumInput(numbers) {
-    let total = 0
-    for (let number of numbers) {
-        total += number;
-    }
-
-    alert(total);
-}
+let result = getMaxSubSum([-1, -22, 3, -9, 2]);
+console.log(result);
