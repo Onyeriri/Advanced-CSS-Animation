@@ -358,22 +358,44 @@
 
 // console.log(users);
 
-let salaries = {
-    "John": 100,
-    "Pete": 300,
-    "Mary": 250,
-    "Main": 200
-};
+// let salaries = {
+//     "John": 100,
+//     "Pete": 300,
+//     "Mary": 250,
+//     "Main": 200
+// };
   
-console.log(sumSalaries(salaries));
+// console.log(sumSalaries(salaries));
 
-function sumSalaries(salaries) {
-    // return Object.values(salaries).reduce((prev, values) => prev + values, 0)
-    let sum = 0;
-    for (let values of Object.values(salaries)) {
+// function sumSalaries(salaries) {
+//     let sum = 0;
+//     for (let values of Object.values(salaries)) {
         
-        sum += values;
-    }
+//         sum += values;
+//     }
 
-    return sum;
-}
+//     return sum;
+// }
+
+// let user = {
+//     name: 'John',
+//     age: 30,
+//     position: 1,
+// };
+// console.log(count(user))
+// function count(user) {
+//     return Object.keys(user).length;
+// }
+
+let options = {
+    size: {
+        width: 100,
+        height: 200
+    },
+    items: ["Cake", "Donut"],
+    extra: true
+};
+
+let { size: w, items, extra } = options;
+
+console.log(w.width, items[0], extra);
