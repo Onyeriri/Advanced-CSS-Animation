@@ -215,17 +215,165 @@
 // let names = users.map(item => item.name);
 
 // console.log(names);
-let john = { name: "John", surname: "Smith", id: 1 };
-let pete = { name: "Pete", surname: "Hunt", id: 2 };
-let mary = { name: "Mary", surname: "Key", id: 3 };
+// let john = { name: "John", surname: "Smith", id: 1 };
+// let pete = { name: "Pete", surname: "Hunt", id: 2 };
+// let mary = { name: "Mary", surname: "Key", id: 3 };
 
-let users = [ john, pete, mary ];
+// let users = [ john, pete, mary ];
 
-let usersMapped = users.map(user => {
-    return {
-        fullName: user.surname + ' ' + user.name,
-        id: user.id
+// let usersMapped = users.map(user => {
+//     return {
+//         fullName: user.surname + ' ' + user.name,
+//         id: user.id
+//     }
+// });
+
+// console.log(usersMapped);
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
+
+// let arr = [ pete, john, mary ];
+// console.log(sortByAge(arr));
+
+// function sortByAge(arr) {
+//     return arr.filter((ar) => (ar.age > 0)).sort((a, b) => a.age - b.age);
+// }
+// let arr = [1, 2, 3];
+// let randomNumber;
+
+// let result = shuffle(arr);
+// console.log(result);
+
+// function shuffle(arr) {
+//     let previousNumber ;
+
+//     for (let value of arr) {
+//         randomNumber = Math.floor(Math.random() * 3);
+
+//         if (previousNumber === randomNumber) continue;
+//         arr[randomNumber] = value;
+//         console.log(randomNumber);
+//         previousNumber = randomNumber
+//     }
+
+//     return arr;
+// }
+
+// const seed = arr[0]
+
+// let initial = 0;
+// let current = 1;
+// let arr = [2, 1, 0]
+// let pre;
+
+// while (current !== initial) {
+//     current = Math.floor(Math.random() * 3);
+//     pre = current;
+
+//     initial = arr[current]
+
+//     console.log(current, initial);
+
+//     break;
+// }
+
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 29 };
+
+// let arr = [john, pete, mary];
+// console.log(getAverageAge(arr));
+
+// function getAverageAge(arr) {
+//     let allAges = 0;
+//     let arrLength = arr.length
+
+//     for (let value of arr) {
+//         allAges += value.age;
+//     }
+
+//     arr.map((arr) => {
+//         allAges += arr.age
+//     })
+
+//     return arr.reduce((prev, user) => prev + user.age, 0) / arr.length;
+// }
+// let strings = ["Hare", "Krishna", "Hare", "Krishna",
+//     "Krishna", "Krishna", "Hare", "Hare", ":-O"
+// ];
+
+// for (let i = 0; i < strings.length; i++) {
+//     for (let j = 1; j < strings.length; j++) {
+//         if (strings[i] === strings[j]) {
+//             strings.splice(j, 1)
+//         }
+//     }
+// }
+
+// console.log(strings);
+
+// let result = []
+// let strings = ["Hare", "Krishna", "Hare", "Krishna",
+//     "Krishna", "Krishna", "Hare", "Hare", ":-O"
+// ];
+
+// const uniqueValues = unique(strings);
+// console.log(uniqueValues);
+
+// function unique(arr) {
+//     for (let value of arr) {
+//         if (!result.includes(value)) {
+//             result.push(value);
+//         }
+//     }
+    
+//     return result;
+        
+// }
+
+// let users = [
+//     {id: 'john', name: "John Smith", age: 20},
+//     {id: 'ann', name: "Ann Smith", age: 24},
+//     {id: 'pete', name: "Pete Peterson", age: 31},
+// ];
+  
+// let usersById = groupById(users);
+// console.log(usersById);
+
+// function groupById(users) {
+    
+//     return users.reduce((prev, user) => {
+//         prev[user.id] = user;
+        
+//         return prev;
+//     }, {})
+// }
+// let values = ["Hare", "Krishna", "Hare", "Krishna",
+//     "Krishna", "Krishna", "Hare", "Hare", ":-O"
+// ];
+
+// const users = Array.from(new Set(values));
+
+
+// console.log(users);
+
+let salaries = {
+    "John": 100,
+    "Pete": 300,
+    "Mary": 250,
+    "Main": 200
+};
+  
+console.log(sumSalaries(salaries));
+
+function sumSalaries(salaries) {
+    // return Object.values(salaries).reduce((prev, values) => prev + values, 0)
+    let sum = 0;
+    for (let values of Object.values(salaries)) {
+        
+        sum += values;
     }
-});
 
-console.log(usersMapped);
+    return sum;
+}
