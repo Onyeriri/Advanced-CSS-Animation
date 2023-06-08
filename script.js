@@ -453,17 +453,31 @@
 // let result = sum(5)(-1);
 // console.log(result);
 
-let arr = [1, 2, 3, 4, 5, 6, 7];
+// let arr = [1, 2, 3, 4, 5, 6, 7];
 
-let result1 = arr.filter(inBetween(3, 6));
-let result2 = arr.filter(inArray([1,2,10]));
-console.log(result2);
+// let result1 = arr.filter(inBetween(3, 6));
+// let result2 = arr.filter(inArray([1,2,10]));
+// console.log(result2);
 
-function inBetween(min, max) {
-    return (ar => ar >= min && ar <=max)
-}
+// function inBetween(min, max) {
+//     return (ar => ar >= min && ar <=max)
+// }
 
-function inArray(array) {
-    return ar => array.includes(ar);
+// function inArray(array) {
+//     return ar => array.includes(ar);
+// }
+
+let users = [
+    { name: "John", age: 20, surname: "Johnson" },
+    { name: "Fun", age: 20, surname: "Zohnson" },
+    { name: "Pete", age: 18, surname: "Peterson" },
+    { name: "Ann", age: 19, surname: "Hathaway" }
+];
+  
+let result = users.sort(byField('name'));
+console.log(result);
+
+function byField(field) {
+    return (a, b) => a[field] > b[field] ? 1 : -1;
 }
 
