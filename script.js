@@ -434,11 +434,36 @@
 //     return lowestPaid;
 
 // }
-let result = factorial(-9000);
-console.log(result);
+// let result = fibonacci(77);
+// console.log(result);
 
-function factorial(number) {
+// function fibonacci(number) {
    
-    return ((number <= 1) ? number : (number * factorial(number - 1)));
+//     return ((number <= 1) ? number : (fibonacci(number - 1) + fibonacci(number - 2)));
+// }
+// const obj1 = { name: 'jane', age: 8 };
+// const obj2 = {...obj1}
+// const result = Array.from({name: 'jane', age: 7})
+// console.log(obj2 === obj1);
+
+// function sum(a) {
+//     return (b) => a + b;
+// }
+
+// let result = sum(5)(-1);
+// console.log(result);
+
+let arr = [1, 2, 3, 4, 5, 6, 7];
+
+let result1 = arr.filter(inBetween(3, 6));
+let result2 = arr.filter(inArray([1,2,10]));
+console.log(result2);
+
+function inBetween(min, max) {
+    return (ar => ar >= min && ar <=max)
+}
+
+function inArray(array) {
+    return ar => array.includes(ar);
 }
 
