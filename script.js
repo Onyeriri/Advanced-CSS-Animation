@@ -387,15 +387,67 @@
 //     return Object.keys(user).length;
 // }
 
-let options = {
-    size: {
-        width: 100,
-        height: 200
-    },
-    items: ["Cake", "Donut"],
-    extra: true
-};
+// let options = {
+//     size: {
+//         width: 100,
+//         height: 200
+//     },
+//     items: ["Cake", "Donut"],
+//     extra: true
+// };
 
-let { size: w, items, extra } = options;
+// let { size: w, items, extra } = options;
 
-console.log(w.width, items[0], extra);
+// console.log(w.width, items[0], extra);
+// let user = {
+//     name: "John",
+//     years: 30
+// };
+  
+// let { name, years, isAdmin = false } = user;
+// console.log(name, years, isAdmin);
+
+// let salaries = {
+//     "John": 100,
+//     "Pete": 300,
+//     "Onyeriri": 1000000,
+//     "Mary": 250
+// };
+
+// console.log(topSalary(salaries));
+
+// function topSalary(salaries) {
+//     let highestPaid = 0;
+//     let lowestPaid = 0;
+
+//     if (Object.entries(salaries).length === 0) return null;
+    
+//     for (let [key, value] of Object.entries(salaries)) {
+
+//         if (value > highestPaid) {
+//             highestPaid = value;
+//             lowestPaid = key
+//         }
+
+//     }
+
+//     return lowestPaid;
+
+// }
+let result = sumNumber(10000000000);
+console.log(result);
+
+
+function sumNumber(number) {
+    // return (number < 1) ? number : number + sumNumber(number - 1);
+    let summation = number;
+
+    if (number < 1) return number;
+
+    for (let i = 1; i < number; i++) {
+        summation += i;
+    }
+
+    return summation;
+}
+
