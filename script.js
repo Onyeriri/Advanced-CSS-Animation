@@ -434,20 +434,11 @@
 //     return lowestPaid;
 
 // }
-let result = sumNumber(10000000000);
+let result = factorial(-9000);
 console.log(result);
 
-
-function sumNumber(number) {
-    // return (number < 1) ? number : number + sumNumber(number - 1);
-    let summation = number;
-
-    if (number < 1) return number;
-
-    for (let i = 1; i < number; i++) {
-        summation += i;
-    }
-
-    return summation;
+function factorial(number) {
+   
+    return ((number <= 1) ? number : (number * factorial(number - 1)));
 }
 
